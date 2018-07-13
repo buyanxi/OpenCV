@@ -14,7 +14,6 @@ int OpenCameraVideo()
     strcpy(chVideoPath, chFilePath);
     strcat(chVideoPath, "Video/video_test.wmv");
 
-
     VideoCapture cInputVideo;
     cInputVideo.open(chVideoPath);
 
@@ -57,8 +56,8 @@ int OpenCameraVideo()
 
 int main()
 {
-
-    if (!OpenCameraVideo()) {
+    int iRet = OpenCameraVideo();
+    if (!iRet) {
         printf("Open video failed!\n");
     }
 
