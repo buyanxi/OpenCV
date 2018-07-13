@@ -1,8 +1,5 @@
-#include <opencv2/video/video.hpp>
+#include <iostream>
 #include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/core/core.hpp>
-#include <opencv/cxcore.h>
 
 using namespace std;
 using namespace cv;
