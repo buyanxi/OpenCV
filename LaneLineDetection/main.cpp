@@ -55,7 +55,7 @@ int main()
         cvtColor(sROIEdgeImage, sHoughDestImage, CV_GRAY2BGR);
         imshow("ROI Hough Dest Image", sHoughDestImage);
 
-    #pragma region Hough直线检测
+    #pragma region Hough
         vector<Vec2f> lines;
 
         HoughLines(sROIEdgeImage, lines, 0.5, CV_PI/180, 30, 0, 0);
@@ -78,7 +78,7 @@ int main()
             pt2.x = cvRound(x0 - 1000*(-b));
             pt2.y = cvRound(y0 - 1000 * (a));
 
-            line(sHoughDestImage, pt1, pt2, Scalar(0, 0, 255), 1, LINE_AA); //Scalar函数用于调节线段颜色，就是你想检测到的线段显示的是什么颜色
+            line(sHoughDestImage, pt1, pt2, Scalar(0, 0, 255), 1, LINE_AA);
 
             imshow("ROI Hough Dest Image", sHoughDestImage);
         }
