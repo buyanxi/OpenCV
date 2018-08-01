@@ -58,12 +58,18 @@ int main()
     #pragma region Hough直线检测
         vector<Vec2f> lines;
 
-        HoughLines(sROIEdgeImage, lines, 0.5, CV_PI/180, 50, 0, 0);
+        HoughLines(sROIEdgeImage, lines, 0.5, CV_PI/180, 30, 0, 0);
         printf("Lines number: %d\n", lines.size());
 
         for (size_t i = 0; i < lines.size(); ++i) {
             float rho = lines[i][0];
             float theta = lines[i][1];
+
+            if (theta < 0.25 * CV_PI || theta >  0.75 * CV_PI) {
+                continue;
+            }
+            printf("theta = %f\n", theta);
+
             Point pt1, pt2;
             double a = cos(theta), b = sin(theta);
             double x0 = a*rho, y0 = b*rho;
