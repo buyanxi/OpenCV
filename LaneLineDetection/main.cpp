@@ -78,9 +78,9 @@ int main()
             pt2.x = cvRound(x0 - 1000*(-b));
             pt2.y = cvRound(y0 - 1000 * (a));
 
-            line(sHoughDestImage, pt1, pt2, Scalar(0, 0, 255), 1, LINE_AA);
+            line(sROIImage, pt1, pt2, Scalar(0, 0, 255), 1, LINE_AA);
 
-            imshow("ROI Hough Dest Image", sHoughDestImage);
+            imshow("ROI Hough Dest Image", sROIImage);
         }
     #pragma endregion
 
